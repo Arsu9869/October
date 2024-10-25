@@ -6,6 +6,7 @@ RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|
 RUN yum install nginx -y
 COPY ./index.html /usr/share/nginx/html/index.html
 COPY ./Script.sh /opt/src/scripts/setup.sh
+RUN yum install git -y
 RUN /opt/src/scripts/setup.sh
 ENTRYPOINT nginx -g "daemon off;"
 EXPOSE 80
