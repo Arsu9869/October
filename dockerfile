@@ -7,6 +7,6 @@ RUN yum install nginx -y
 COPY ./index.html /usr/share/nginx/html/index.html
 COPY ./Script.sh /opt/src/scripts/Script.sh
 RUN yum install git -y
-RUN /opt/src/scripts/Script.sh
+RUN  /bin/bash -c /opt/src/scripts/Script.sh
 ENTRYPOINT nginx -g "daemon off;"
 EXPOSE 80
